@@ -13,7 +13,7 @@
   </form>
   <input type="button" value="曲を決める" onclick="getSongName()">
   <div>
-    <p>※著作権の都合により、(*) がついている曲は収録されていない場合があります。</p>
+    <p>※著作権の都合により、(*) がついている曲は収録されていない版があります。</p>
     <p>曲名：<span id="song-name"></span></p>
     <p>収録本：<span id="book-name"></span></p>
   </div> 
@@ -46,7 +46,7 @@
       let req = new XMLHttpRequest();
       req.open("GET", url, false);
       req.send(null)
-      if(req.readyState == 4 && req.status == 200){ // サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
+      if(req.readyState == 4 && req.status == 200){
         return req.responseText
       } else {
         return "error"
