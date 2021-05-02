@@ -34,11 +34,11 @@
     function getCheckedElement(array){
       const results = [];
       for (let i = 0; i < array.length; i++) {
-      if (array[i].checked) {
-        results.push(array[i]);
+        if (array[i].checked) {
+          results.push(array[i]);
+        }
       }
       return results;
-    }
     }
     function getRandomArrayElement(array) {
       return array[Math.floor(Math.random() * array.length)];
