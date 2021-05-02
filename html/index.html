@@ -23,14 +23,14 @@
 
     function getSongName() {
       const chosenBooks = getCheckedElement(document.selectBookForm.book);
-      const bookFileName = getRandomArrayElement(chosenBooks).value;
+      const bookFileName = pickRandomArrayElement(chosenBooks).value;
       const bookUrl = `../datas/${bookFileName}.json`;
       const bookArray = JSON.parse(getJson(bookUrl));
-      const song = getRandomArrayElement(bookArray.songs);
+      const song = pickRandomArrayElement(bookArray.songs);
       SONG_NAME_INDICATOR.innerHTML = song.name;
       BOOK_NAME_INDICATOR.innerHTML = bookArray.bookName;
     }
-    function getCheckedElement(array){
+    function getCheckedElement(array) {
       const results = [];
       for (let i = 0; i < array.length; i++) {
         if (array[i].checked) {
@@ -39,8 +39,9 @@
       }
       return results;
     }
-    function getRandomArrayElement(array) {
-      return array[Math.floor(Math.random() * array.length)];
+    function pickRandomArrayElement(array) {
+      randomIndex = Math.floor(Math.random() * array.length);
+      return array[randamIndex];
     }
     function getJson(url) {
       let req = new XMLHttpRequest();
