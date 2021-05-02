@@ -9,7 +9,7 @@
   <h1>セッション曲決めるマン(黒本準拠)</h1>
   <form name="selectBookForm">
     <p>黒本１<input type="checkbox" name="book" value="jz-std-bible-1"></p>
-    <p>黒本２<input type="checkbox" name="book" value="jz-std-bible-2"></p>
+    <p>黒本２(工事中)<input disabled type="checkbox" name="book" value="jz-std-bible-2"></p>
   </form>
   <input type="button" value="曲を決める" onclick="getSongName()">
   <div>
@@ -21,6 +21,7 @@
     const BOOK_NAME_INDICATOR = document.getElementById("book-name");
 
     function getSongName() {
+      // FIX: selectBookForm内２個目（黒本２）をチェックしてもvalueが読み込まれない。
       const chosenBooks = getCheckedElement(document.selectBookForm.book);
       console.log(chosenBooks);
       const bookFileName = getRandomArrayElement(chosenBooks).value;
