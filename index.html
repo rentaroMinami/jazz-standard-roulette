@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
   <meta charset="UTF-8">
-  <title>セッション曲決めるマン(黒本準拠)</title>
+  <title>セッション曲決めるマン</title>
 
 </head>
 <body>
-  <h1>セッション曲決めるマン(黒本準拠)</h1>
+  <h2>セッション曲決めるマン<br>(黒本準拠)</h2>
+  <p style="font-size: small;">ジャズ・スタンダード・バイブルシリーズ(著：納浩一)収録曲から、ランダムで選びます。</p>
+  <hr>
   <form name="selectBookForm">
     <p>
-      <label>黒本１</label>
+      <label><b>黒本１</b></label>
       <input type="checkbox" name="book" value="jz-std-bible-1">
     </p>
     <p>
-      <label>黒本２</label>
+      <label><b>黒本２</b></label>
       <input type="checkbox" name="book" value="jz-std-bible-2">
     </p>
   </form>
-  <input type="button" value="曲を決める" onclick="getSongName()">
+  <input type="button" value="セッション曲を決める" onclick="getSongName()">
   <div>
-    <p>※著作権の都合により、(*) がついている曲は収録されていない版があります。</p>
+    <p style="font-size: small;">※著作権の都合により、<br> "*" がついている曲は収録されていない版があります。</p>
     <p>曲名　：<span id="song-name"></span></p>
     <p>収録本：<span id="book-name"></span></p>
   </div> 
