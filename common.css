@@ -1,0 +1,32 @@
+:root {
+  touch-action: none;
+  touch-action: manipulation;
+}
+
+
+body {
+  background-color: #F0F0F0;
+  color: #1f1f1f;
+  touch-action: manipulation;
+  font-size: smaller;
+}
+
+.annotation-text {
+  font-size: small;
+}
+
+.book-name {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.btn {
+  color: #F0F0F0;
+  background-color: #1f1f1f;
+  width: 100%;
+  height: 10vh;
+  border-radius: 1%;
+  border: transparent;
+  font-weight: bolder;
+  font-size: larger;
+}

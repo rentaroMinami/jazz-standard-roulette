@@ -3,28 +3,28 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./common.css">
   <title>セッション曲決めるマン</title>
-
 </head>
 <body>
-  <h2>セッション曲決めるマン<br>(黒本準拠)</h2>
-  <p style="font-size: small;">ジャズ・スタンダード・バイブルシリーズ(著：納浩一)収録曲から、ランダムで選びます。</p>
+  <h2>セッション曲決めるマン</h2>
+  <p class="annotation-text">黒本ことジャズ・スタンダード・バイブルシリーズ(著：納浩一)収録曲から、ランダムで選びます。</p>
   <hr>
   <form name="selectBookForm">
     <p>
-      <label><b>黒本１</b></label>
-      <input type="checkbox" name="book" value="jz-std-bible-1">
+      <label><span class="book-name">黒本１</span></label>
+      <input type="checkbox" name="book" value="jz-std-bible-1" checked="true">
     </p>
     <p>
-      <label><b>黒本２</b></label>
+      <label><span class="book-name">黒本２</span></label>
       <input type="checkbox" name="book" value="jz-std-bible-2">
     </p>
   </form>
-  <input type="button" value="セッション曲を決める" onclick="getSongName()">
+  <input type="button" class="btn" value="セッション曲を決める" onclick="getSongName()">
   <div>
-    <p style="font-size: small;">※著作権の都合により、<br> * がついている曲は収録されていない版があります。</p>
+    <p class="annotation-text">※著作権の都合により、* がついている曲は収録されていない版があります。</p>
     <p>曲名　：<span id="song-name"></span></p>
-    <p>収録本：<span id="book-name"></span></p>
+    <p>収録　：<span id="book-name"></span></p>
   </div> 
   <script>
     const SONG_NAME_INDICATOR = document.getElementById("song-name");
@@ -33,7 +33,7 @@
     function getSongName() {
       const chosenBooks = getCheckedElement(document.selectBookForm.book);
       const bookFileName = pickRandomArrayElement(chosenBooks).value;
-      const bookUrl = `./datas/${bookFileName}.json`;
+      const bookUrl = `./data/${bookFileName}.json`;
       const bookArray = JSON.parse(getJson(bookUrl));
       const song = pickRandomArrayElement(bookArray.songs);
       SONG_NAME_INDICATOR.innerHTML = song.name;
@@ -48,10 +48,12 @@
       }
       return results;
     }
+
     function pickRandomArrayElement(array) {
       const randomIndex = Math.floor(Math.random() * array.length);
       return array[randomIndex];
     }
+
     function getJson(url) {
       let req = new XMLHttpRequest();
       req.open("GET", url, false);
