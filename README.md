@@ -1,5 +1,9 @@
 # jazz-standard-roulette
-Pick a jazz-standard-song at random. 
+ジャズ・スタンダードをランダムに選曲します。
+ジャズミュージシャンのセッションでの選曲に悩んだ場合などにおすすめです。
 
-## でぷろい先URL
+ジャズ・スタンダード・バイブル/納浩一 著（通称 黒本１）
+ジャズ・スタンダード・バイブル２/納浩一 著（通称 黒本２）
+
+## デプロイ先URL
 https://obscure-dusk-68191.herokuapp.com
